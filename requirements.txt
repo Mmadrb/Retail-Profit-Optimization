@@ -1,0 +1,21 @@
+# ------------------------------------------------------
+# SUPERSTORE PROJECT DEPENDENCIES
+# Install via: pip install -r requirements.txt
+# ------------------------------------------------------
+
+# Core Data Analysis
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Machine Learning & Statistics
+scikit-learn>=1.3.0
+scipy>=1.10.0
+
+# Visualization & Dashboarding
+matplotlib>=3.7.0
+seaborn>=0.12.2
+
+# Utilities (Standard Library - listed for clarity)
+# os
+# pathlib
+# hashlib
