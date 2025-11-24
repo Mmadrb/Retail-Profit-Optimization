@@ -5,7 +5,7 @@ import numpy as np
 import os
 from pathlib import Path
 
-# --- Configuration -----
+# --- Configuration --------------
 DATA_PATH = r"C:\Users\moham\OneDrive\Desktop\project\Data\Superstore.csv"
 OUTPUT_DIR = Path(r"C:\Users\moham\OneDrive\Desktop\MIT\Superstore\executive_dashboard_v3")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
