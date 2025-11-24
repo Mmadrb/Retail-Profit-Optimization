@@ -13,7 +13,7 @@ from datetime import datetime, timedelta
 import warnings
 warnings.filterwarnings('ignore')
 
-# --- نصب کتابخانه‌های CLV ---
+# --- نصب کتابخانه‌های CLV -----
 # pip install lifetimes
 try:
     from lifetimes import BetaGeoFitter, GammaGammaFitter
