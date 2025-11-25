@@ -1,90 +1,75 @@
- 📊 Superstore Profitability & Strategic Analysis
+ 📊 تحلیل داده و بهینه‌سازی سود فروشگاه (Superstore Profit Optimization)
 
- 🚀 Project Overview
-This project performs a comprehensive data science analysis on retail sales data to solve the "High Sales, Low Profit" paradox.
-By utilizing Clustering, Regression, and Strategic Matrix Analysis, actionable insights were derived to optimize marketing budget and inventory management.
+![Banner Image](https://img.shields.io/badge/Status-Completed-success)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Focus](https://img.shields.io/badge/Focus-Data%20Science%20%26%20Business%20Intelligence-orange)
 
----
+ 🚀 درباره پروژه
+بسیاری از کسب‌وکارهای خرده‌فروشی با پارادوکس «فروش بالا، سود پایین» مواجه هستند. این پروژه یک تحلیل جامع آنالیز داده (Data Analytics) روی داده‌های فروشگاه زنجیره‌ای است تا ریشه‌های پنهان زیان‌دهی را شناسایی کرده و راهکارهای عملی برای افزایش سود ارائه دهد.
 
- 📂 Repository Structure & Scripts
-
-The core analysis is divided into 5 specific modules located in the `src/` folder:
-
- 1. `Break-even point.py`
-   Goal: Diagnostic analysis of discounting strategy.
-   Method: Calculates the exact discount threshold where profitability turns negative.
-   Output: Determines that discounts >20% yield negative margins using statistical thresholds.
-
- 2. `clustring.py`
-   Goal: Customer Segmentation.
-   Method: Applied RFM Analysis (Recency, Frequency, Monetary) combined with K-Means Clustering.
-   Result: identified 4 distinct customer personas (e.g., "High-Value Loyalists" vs. "Discount Seekers").
-
- 3. `CLV.py`
-   Goal: Customer Lifetime Value & Profitability Drivers.
-   Method: Analyzes long-term customer value and simulates profit scenarios (Counterfactual Analysis).
-   Insight: Proves that optimizing the discount policy for specific segments significantly increases CLV.
-
- 4. `matrix portfilio products.py`
-   Goal: Product Performance Analysis.
-   Method: Generates the "Kill List" – identifying bottom-performing products that drain resources.
-   Visualization: Bar charts highlighting low-margin SKUs.
-
- 5. `BCG and heatmap.py`
-   Goal: Executive Dashboard & Strategic Visualization.
-   Method:
-       BCG Matrix: Maps products to Growth/Share quadrants (Stars, Dogs, Cows).
-       Heatmap: Market Basket Analysis to find cross-selling opportunities (Product Affinity).
+هدف اصلی این پروژه فراتر از گزارش‌گیری ساده است؛ ما با استفاده از یادگیری ماشین (Machine Learning) و تحلیل‌های آماری، پاسخ سوالات استراتژیک زیر را پیدا کردیم:
+1. چرا با وجود افزایش فروش، حاشیه سود کاهش یافته است؟
+2. کدام مشتریان واقعاً سودآور هستند و کدام‌یک فقط در زمان تخفیف خرید می‌کنند؟
+3. سبد محصولات (Portfolio) باید چگونه اصلاح شود؟
 
 ---
 
- 🧠 Key Insights
+ 🧠 متدولوژی و رویکرد فنی
 
-1.  Discount Sensitivity: A generic discount strategy is hurting the bottom line. Tech products have high organic demand and don't require deep discounts.
-2.  Customer Behavior: A significant cluster of customers ("Discount Seekers") only purchases loss-making items. Marketing spend on this segment should be cut.
-3.  Product Strategy: The "Tables" sub-category is a "Dog" (Low Margin, Low Growth), while "Phones" are "Stars".
+این پروژه در ۴ ماژول اصلی پیاده‌سازی شده است:
+
+ ۱. تحلیل تشخیصی (Diagnostic Analysis & Regression)
+   مسئله: شناسایی عوامل تأثیرگذار بر سود.
+   روش: استفاده از Linear Regression برای تعیین وزن متغیرها.
+   یافته: نرخ تخفیف (Discount Rate) قوی‌ترین ضریب منفی را دارد. تحلیل‌ها نشان داد تخفیف‌های بالای ۲۰٪ نقطه سربه‌سر (Break-even) را می‌شکنند.
+
+ ۲. بخش‌بندی مشتریان (Customer Segmentation)
+   مسئله: یکسان بودن استراتژی مارکتینگ برای همه مشتریان.
+   روش: ترکیب تحلیل RFM (تازگی، تکرار، مبلغ) با الگوریتم K-Means Clustering.
+   یافته: شناسایی ۴ گروه مشتری متمایز:
+       وفاداران ارزشمند (High-Value Loyalists): سود بالا، حساسیت کم به قیمت.
+       جویندگان تخفیف (Discount Seekers): فقط کالاهای زیان‌ده می‌خرند (نیاز به قطع تخفیف).
+       معمولی‌ها و در خطر ریزش.
+
+ ۳. شبیه‌سازی سناریوی سود (Counterfactual Simulation)
+   مسئله: سنجش ریسک تغییر سیاست تخفیف.
+   روش: انجام یک تحلیل What-If. فرض کردیم اگر سقف تخفیف برای گروه "جویندگان تخفیف" روی ۲۰٪ قفل شود، چه اتفاقی می‌افتد؟
+   نتیجه: اثبات ریاضی افزایش چشمگیر حاشیه سود با استفاده از آزمون آماری Welch’s T-Test.
+
+ 📸 ۴. داشبورد استراتژیک (Executive Dashboard)
+   روش: طراحی نمودارهای پیشرفته با `Seaborn` و `Matplotlib` برای تصمیم‌گیری مدیریتی.
+   خروجی: ماتریس BCG، لیست سیاه محصولات و هیت‌مپ سبد خرید.
 
 ---
 
-  📸 Visual Analytics & Dashboard
+ 📊 نتایج کلیدی (Key Insights)
 
-Here are the key visual outputs generated by the analysis pipeline. These charts are automatically created using Matplotlib and Seaborn.
-
- 1. Strategic Product Portfolio (BCG Matrix)
-Goal: Identify "Stars" (High Growth/Profit) vs. "Dogs" (Low Growth/Profit).
- Insight: Technology products (green bubbles) are our primary profit drivers, while Tables (gray bubbles) are draining resources.
+ ۱. ماتریس استراتژیک محصولات (BCG Matrix)
+محصولات بخش تکنولوژی (Technology) نقش ستاره‌ها (Stars) را دارند (رشد بالا، سود بالا)، در حالی که میزها (Tables) در بخش مبلمان، منابع مالی را می‌بلعند.
 ![BCG Matrix](output/2_bcg_matrix_enhanced.png)
 
- 2. Customer Segmentation (Cluster Profiling)
-Goal: Visualize the 4 distinct customer personas identified by K-Means.
- Insight: The diagonal plots show the distribution, while scatter plots reveal the clear separation between "Loyalists" (Green) and "Discount Seekers" (Red).
-![Cluster Analysis](output/cluster_pairplot.png)
-
- 3. Cross-Selling Opportunities (Market Basket Analysis)
-Goal: Discover which product categories are frequently purchased together.
- Insight: Darker squares indicate high co-occurrence. Strong affinity found between "Binders" and "Paper", suggesting a bundling opportunity.
-![Heatmap](output/3_market_basket_heatmap.png)
-
- 4. The "Kill List" (Lowest Margin Products)
-Goal: Identify the top 10 products negatively impacting the bottom line.
- Action: Immediate price restructuring or discontinuation recommended for these SKUs.
+ ۲. لیست سیاه محصولات (The Kill List)
+۱۰ محصولی که با وجود فروش، بیشترین حاشیه سود منفی را دارند شناسایی شدند. پیشنهاد توقف فروش یا افزایش قیمت برای این اقلام داده شد.
 ![Kill List](output/1_low_margin_products.png)
 
- 5. Automated Terminal Report
-Goal: A snapshot of the automated CLI report generated after each data pipeline run.
-![Terminal Report](output/cluster_report_card.png)
+ ۳. خوشه‌بندی مشتریان
+تفکیک دقیق مشتریان وفادار (سبز) از مشتریان زیان‌ده (قرمز) برای هدفمند کردن بودجه تبلیغات.
+![Clustering](output/cluster_pairplot.png)
 
 ---
 
- 🛠️ Tech Stack
-   Language: Python 3.14
-   Libraries: Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn
-   Techniques: K-Means, Linear Regression, Market Basket Analysis
+ 🛠️ ابزارها و تکنولوژی‌ها
+
+   زبان: Python
+   تحلیل داده: Pandas, NumPy
+   یادگیری ماشین: Scikit-Learn (K-Means, Linear Regression)
+   آمار: SciPy (Hypothesis Testing)
+   مصورسازی: Matplotlib, Seaborn
 
 ---
 
- 💻 How to Run
-1. Clone the repository.
-2. Install dependencies:
+ 💻 راهنمای اجرا (How to Run)
+
+1. مخزن را کلون کنید:
    ```bash
-   pip install pandas numpy matplotlib seaborn scikit-learn
+   git clone https://https://github.com/Mmadrb/Retail-Profit-Optimization.git
